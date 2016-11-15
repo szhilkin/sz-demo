@@ -1,0 +1,35 @@
+version: '2'
+services:
+    http:
+     build:
+      context: nginx
+     ports:
+      - 80:80
+     links:
+     - app
+     depends_on:
+     - app
+     
+    db:
+     image: mysql
+     environment:
+      - MYSQL_DATABASE=sz-demo_production
+      - MYSQL_USER=sz-demo
+      - MYSQL_PASSWORD=sz-demo
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
+    app:
+     build: 
+      context: .
+     command: bundle exec rails s -p 3000 -b '0.0.0.0'
+     environment:
+      - SZ-DEMO_DATABASE_PASSWORD=sz-demo
+      - RAILS_ENV=production
+      - SECRET_KEY_BASE=ddb13c7f20c2a015657ebc293a32b7b5c84951d9cf3009f92f9ab6d98f2377b8591209f5ff1a579ea53b6bbd7c329ff1916c89e4ca311810c348d7785d12b1d0
+#     ports:
+#      - "3000:3000"
+     links:
+     - db:mysqldb
+     depends_on:
+      - db
+
