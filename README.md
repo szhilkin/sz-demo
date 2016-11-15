@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Empty Rails app to test docker-compose.
 
-Things you may want to cover:
+To run:
+* clone
 
-* Ruby version
+* install docker and docker-compose
 
-* System dependencies
+* pull images of nginx, mysql, ruby (see Dockerfile)
 
-* Configuration
+* docker-compose build
 
-* Database creation
+* docker-compose up
 
-* Database initialization
+* docker-compose run app rake db:create
 
-* How to run the test suite
+* docker-compose run app rake db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+* docker-compose run app rake db:seed
 
-* Deployment instructions
+* curl http://localhost/
 
-* ...
+
+
+
