@@ -2,6 +2,8 @@
 
 Empty Rails app to test docker-compose.
 
+Added autobuild repo to https://hub.docker.com/r/szhilkin/sz-demo
+
 To run:
 * clone
 
