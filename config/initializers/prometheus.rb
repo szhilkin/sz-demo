@@ -1,6 +1,6 @@
 Prome.configure do |config|
-  config.sidekiq_metrics_host = "127.0.0.1"
-  config.sidekiq_metrics_port = 3001
+#  config.sidekiq_metrics_host = "127.0.0.1"
+#  config.sidekiq_metrics_port = 3001
 end
 
 Prome.configure do |config|
